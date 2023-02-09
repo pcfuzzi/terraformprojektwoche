@@ -1,0 +1,15 @@
+---
+all:
+  vars:
+    ansible_user: techstarter
+    ansible_ssh_privat_key_file: ./sshkey
+    ansible_ssh_extra_args: "-o StrictHostKeyChecking=no"
+  children:
+    jenkins:
+      hosts:
+        "jenkins-ts.ddns.net":
+          ansible_host: 40.85.72.252
+    webserver:
+      hosts:
+        "webserver.myddns.me":
+          ansible_host: 20.166.67.203
